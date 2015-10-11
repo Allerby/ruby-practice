@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :articles
   get 'signup' => 'users#new'
 
   get 'home/index'
