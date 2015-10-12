@@ -28,6 +28,18 @@ p {
     line-height: 1.7em;
 }
 
+/* header */
+
+#logo {
+    display:inline-block;
+}
+
+.container {
+    nav {
+        display:inline;
+    }
+}
+
 /* footer */
 
 footer {
@@ -57,4 +69,12 @@ footer ul {
 footer ul li {
   float: left;
   margin-left: 15px;
+}
+
+/* body */
+
+.container {
+    section {
+        margin-top:60px;
+    }
 }
