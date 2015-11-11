@@ -59,6 +59,7 @@ gem 'high_voltage'
 gem 'mysql2'
 gem 'mysql'
 gem 'simple_form'
+gem 'carrierwave'
 
 group :development do
   gem 'better_errors'

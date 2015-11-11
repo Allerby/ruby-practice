@@ -64,6 +64,32 @@ p {
 }
 
 /* body */
+.view {
+  padding: 15px;
+}
+
+.hero-navigation {
+  width: 30vw;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  min-width: 300px;
+  overflow: hidden;
+  z-index: 1;
+  min-height: 100%;
+  background-color: #ddd;
+}
+
+.page-wrapper {
+  padding-left:30vw;
+  @media screen and (max-width: 990px) {
+    padding-left: 300px;
+  }
+}
+
+.content {
+
+}
 
 .container {
     section {
@@ -147,6 +173,19 @@ aside {
 }
 
 /* forms */
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
