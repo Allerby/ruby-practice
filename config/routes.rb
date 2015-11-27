@@ -15,11 +15,19 @@ Rails.application.routes.draw do
   resources :articles
   resources :users
 
+  get 'tagged', to: 'posts#tagged', as: :tagged
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   resources :articles do
     resources :comments
   end
+
+  resources :stories do
+  end
+
+  resources :tags, only: [:index, :show]
 
 
   # Example of regular route:

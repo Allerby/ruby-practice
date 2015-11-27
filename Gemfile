@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', require: false
 gem 'redcarpet', '~> 3.1.2'
-
+gem 'acts-as-taggable-on', '~> 3.4'
 
 gem 'bower-rails'
 
