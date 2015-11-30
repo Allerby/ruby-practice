@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   end
 
   resources :stories do
+    resources :novels, shallow: true do
+    end
   end
 
   resources :tags, only: [:index, :show]

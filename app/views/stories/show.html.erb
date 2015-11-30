@@ -6,5 +6,12 @@
   <%= tag.name %>
   <%= link_to tag.name, tag_path(tag) %>
 <% end %>
+
+<h2>Novels</h2>
+<%= render @story.novels %>
+
+<h2>Add a Novel:</h2>
+<%= render 'novels/form' %>
+
 <%= link_to 'Edit', edit_story_path(@story) %> |
 <%= link_to 'Back', stories_path %>

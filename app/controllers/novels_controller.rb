@@ -12,11 +12,6 @@ class NovelsController < ApplicationController
   def show
   end
 
-  # GET /novels/new
-  def new
-    @novel = Novel.new
-  end
-
   # GET /novels/1/edit
   def edit
   end
@@ -24,17 +19,10 @@ class NovelsController < ApplicationController
   # POST /novels
   # POST /novels.json
   def create
-    @novel = Novel.new(novel_params)
+    @story = Story.find(params[:story_id])
+    @novel = @story.novels.create(novel_params)
+    redirect_to story_path(@story)
 
-    respond_to do |format|
-      if @novel.save
-        format.html { redirect_to @novel, notice: 'Novel was successfully created.' }
-        format.json { render :show, status: :created, location: @novel }
-      else
-        format.html { render :new }
-        format.json { render json: @novel.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # PATCH/PUT /novels/1
@@ -69,6 +57,6 @@ class NovelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def novel_params
-      params[:novel]
+      params.require(:novel).permit(:title, :description)
     end
 end
