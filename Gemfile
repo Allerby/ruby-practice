@@ -1,12 +1,15 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 ruby '2.2.3'
 gem 'rails', '4.2.4'
 # Use sqlite3 as the database for Active Record
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+
+gem 'pry'
+
+gem 'nokogiri', '~> 1.6.7.2'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -25,9 +28,14 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', require: false
 gem 'redcarpet', '~> 3.1.2'
 gem 'acts-as-taggable-on', '~> 3.4'
+gem "trailblazer"
+gem "trailblazer-rails"
+gem "cells"
+gem "cells-haml"
+gem "haml", github: "haml/haml", ref: "7c7c169"
 
 gem 'bower-rails'
-
+gem 'summernote-rails'
 # front end frameworks
 gem 'bundler', '>= 1.8.4'
 
@@ -55,6 +63,7 @@ end
 
 
 gem 'bootstrap-sass'
+gem 'bootswatch-rails'
 gem 'high_voltage'
 gem 'mysql2'
 gem 'mysql'

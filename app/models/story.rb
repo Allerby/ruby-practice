@@ -1,5 +1,5 @@
 class Story < ActiveRecord::Base
-  has_many :novels
+  belongs_to :user
   acts_as_taggable
   acts_as_taggable_on :tags
   mount_uploader :feature_image, FeatureImageUploader

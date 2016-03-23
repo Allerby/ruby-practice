@@ -1,0 +1,35 @@
+// Place all the styles related to the stories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#story {
+  #edit-story {
+    input.title {
+      border: none;
+      font-size: 20px;
+      line-height: 1.2em;
+      margin-bottom: 20px;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  // Summernote
+  .note-editor {
+    min-height: 60vh;
+  }
+}
+
+.note-editor.note-frame  {
+  border: 0px !important;
+  .note-statusbar {
+    background-color: #fff !important;
+  }
+}
+
+
+.panel-default > .panel-heading.note-toolbar {
+  background-color: #fff;
+  border: 0px;
+}

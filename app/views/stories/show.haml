@@ -1,0 +1,11 @@
+%p#notice
+  - if flash[:notice]
+    .alert.alert-success{role:'alert'}
+      = notice
+= @story.title
+= @story.description.html_safe
+= link_to 'Edit', edit_user_story_path(@user, @story)
+- @story.tags.any?
+  - @story.tags.each do |tag|
+  = tag.name
+  = link_to tag.name, tag_path(tag)

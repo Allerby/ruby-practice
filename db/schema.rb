@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151126235949) do
+ActiveRecord::Schema.define(version: 20160320093526) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title",         limit: 255
@@ -67,7 +67,10 @@ ActiveRecord::Schema.define(version: 20151126235949) do
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.string   "feature_image", limit: 255
+    t.integer  "user_id",       limit: 4
   end
+
+  add_index "stories", ["user_id"], name: "index_stories_on_user_id", using: :btree
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id",        limit: 4
@@ -104,4 +107,5 @@ ActiveRecord::Schema.define(version: 20151126235949) do
   add_foreign_key "comments", "articles"
   add_foreign_key "novels", "stories"
   add_foreign_key "parts", "novels"
+  add_foreign_key "stories", "users"
 end

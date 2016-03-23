@@ -1,0 +1,28 @@
+- if logged_in?
+  = gravatar_for current_user
+  %p.current-user-name
+    = current_user.name
+%nav
+  %ul.nav.nav-stacked
+    %li= link_to "Home",   root_path
+    %li= link_to "Sign up", signup_path
+    %li= link_to "Read", ""
+    - if logged_in?
+      %li= link_to 'Start writing', new_user_story_path(current_user.id)
+    - else
+      %li= link_to 'Start writing', ''
+    - if logged_in?
+      %li= link_to 'My Novels', user_stories_path(current_user.id)
+      %li= link_to "Users", users_path
+      %li.dropdown
+        %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+          Account
+          %b.caret
+        %ul.dropdown-menu
+          %li= link_to "Profile", current_user
+          %li= link_to "Settings", '#'
+          %li.divider
+          %li
+            = link_to "Log out", logout_path, method: "delete"
+    - else
+      %li= link_to "Log in", login_path

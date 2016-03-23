@@ -8,7 +8,7 @@ RSpec.describe "stories/new", type: :view do
   it "renders new story form" do
     render
 
-    assert_select "form[action=?][method=?]", stories_path, "post" do
+    assert_select "form[action=?][method=?]", user_stories_path(current_user.id), "post" do
     end
   end
 end

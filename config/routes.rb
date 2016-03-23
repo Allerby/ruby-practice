@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   delete 'logout'  => 'sessions#destroy'
 
   resources :articles
-  resources :users
+
 
   get 'tagged', to: 'posts#tagged', as: :tagged
 
@@ -24,9 +24,8 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  resources :stories do
-    resources :novels, shallow: true do
-    end
+  resources :users do
+    resources :stories
   end
 
   resources :tags, only: [:index, :show]

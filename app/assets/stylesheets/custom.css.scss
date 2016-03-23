@@ -69,21 +69,43 @@ p {
 }
 
 .hero-navigation {
-  width: 30vw;
+  width: 20vw;
   position: fixed;
   top: 0px;
   left: 0px;
-  min-width: 300px;
+  min-width: 200px;
   overflow: hidden;
   z-index: 1;
   min-height: 100%;
-  background-color: #ddd;
+  background-color: #2D292A;
+  ul.nav {
+    li {
+      a {
+        color: #C3C3C3;
+        &:hover {
+          background-color: #000;
+        }
+      }
+    }
+  }
+  img {
+    margin: 15px auto 5px;
+    display: block;
+    border: solid 4px #fafafa;
+    border-radius: 50px;
+  }
+
+  p.current-user-name {
+    color: #fafafa;
+    text-align: center;
+    font-weight: bold;
+  }
 }
 
 .page-wrapper {
-  padding-left:30vw;
+  padding-left:20vw;
   @media screen and (max-width: 990px) {
-    padding-left: 300px;
+    padding-left: 200px;
   }
 }
 
@@ -164,7 +186,6 @@ aside {
 }
 
 .gravatar {
-  float: left;
   margin-right: 10px;
 }
 

@@ -1,0 +1,28 @@
+- provide(:title, "Log in")
+%h1 Log in
+
+.row
+  .col-md-5.col-md-offset-1
+    = form_for(:session, url: login_path) do |f|
+      -# = render 'shared/error_messages'
+
+      .form-group
+        = f.label :email, class: 'form-control-label'
+        = f.email_field :email, class: 'form-control'
+
+      .form-group
+        = f.label :password, class: 'form-control-label'
+        = f.password_field :password, class: 'form-control'
+
+      .form-group
+        = f.label :remember_me, class: 'checkbox inline c-input c-checkbox' do
+          = f.check_box :remember_me, class: 'checkbox'
+          %span.c-indicator Remember me
+
+      .input-group
+        = f.submit 'Log in', class: 'btn btn-primary'
+
+
+  .col-md-5.col-md-offset-1
+    %p New user?
+    = link_to "Sign up now!", signup_path, class: 'btn btn-primary'

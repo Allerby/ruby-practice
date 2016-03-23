@@ -1,0 +1,15 @@
+= simple_form_for([@user, @story], html: {id: 'edit-story'}) do |f|
+  - if @story.errors.any?
+    #error_explanation
+      %h2 = pluralize(@story.errors.count, "error") prohibited this story from being saved:
+
+      %ul
+      - @story.errors.full_messages.each do |message|
+        %li = message
+
+  = f.text_field :title, class: 'title', placeholder: 'Title'
+  = f.text_area :description, placeholder: 'Body', data: {provider: 'summernote'}
+
+  .btn-group
+    = f.submit 'Save', class: 'btn btn-primary'
+  = link_to 'Back', user_stories_path(current_user.id), class: 'btn btn-default'
